@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block head %}
+<head>
+    <title>{{monument.name}} - Brighton </title>
+</head>
+{% endblock %}
+
+{% block body %}
+    <div class="jumbotron">
+        <div class="container">
+
+            <div class="publication-thumb">
+                <h1 style="font-size: 48px">{{monument.name}}</h1>
+                <div>
+                    <p>
+                        Date d'inauguration : {{monument.date}}
+                    </p>
+                    <p>
+                        {{monument.description}}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

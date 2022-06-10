@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h1> Histoire de Brighton </h1>
+
+        <div class="container">
+            <p> Dans le Domesday Book, Brighton s’appelait Bristelmestone et devait payer une redevance de 4 000 harengs.
+                En juin 1514, Brighthelmstone a été entièrement brûlée par des envahisseurs français au cours d’une guerre entre l’Angleterre et la France.
+                Seule une partie de l’église Saint-Nicolas et le tracé des rues ont subsisté.
+                La première représentation connue de Brighthelmstone a été faite en 1545 et nous dépeint le raid français de 1514.
+            </p>
+            <p> L’arrivée du chemin de fer, en 1841, mit Brighton à la portée des excursionnistes de Londres qui souhaitaient y faire une visite d’une journée, et sa croissance démographique rapide la mena d’environ 7 000 habitants en 1801 à plus de 120 000 en 1901.
+                L’ère victorienne vit la construction de beaucoup d’édifices célèbres de Brighton comme le Grand Hôtel (1864), le West Pier (1866) et le Palace Pier (1899).
+            </p>
+        </div>
+
+        <div class="container">
+            <p> Pendant la Première Guerre mondiale le <a href="{{path("monument_detail",  {"monument": "Royal Pavilion"}) }}"> Royal Pavilion</a> est transformé en hôpital pour les soldats blessés d'origine indienne.
+                Pendant la Seconde Guerre mondiale, les plages de Brighton ont été barbelées et minées par crainte d'un débarquement allemand.
+                Finalement, ce débarquement n'a jamais eu lieu.
+                En revanche des raids aériens allemands sont menés sur la ville, le premier date du 15 juillet 1940; le cinéma Odeon est bombardé le 14 septembre 1940 et le 25 mai 1943 un raid aérien de la Luftwaffe fait 24 morts et 51 blessés.
+            </p>
+            <img src="../public/img/Brighton_royal_pavilion_Qmin.jpg">
+            <p>
+                Grande ville balnéaire estudiantine de par ses universités, Brighton est très prisée par la jeunesse britannique : à une heure de Londres, les plages et le rythme de la ville séduisent les jeunes Anglais.
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

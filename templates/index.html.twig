@@ -1,0 +1,45 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- DEBUT Contenu -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Brighton</h1>
+            <p>Découvrez la ville de Brighton</p>
+            <p>
+                <!-- Lien vers la page publier -->
+                <a href="{{path('contact')}}" class="btn btn-lg btn-primary">
+                    Contactez-nous
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Dernières actualités</h2>
+        <hr>
+
+        <div class="publication-thumb">
+            {% for publication in publications %}
+                <h3>{{publication.title}}</h3>
+                <div>
+                    <p>
+                        Publié par <strong>{{publication.author}}</strong>,
+                        le <em>{{publication.publishedAt|date('d/m/y')}}</em>.
+                    </p>
+                    <p>
+                        {{publication.description}}
+                    </p>
+                    <p>
+                        <!-- Lien vers le détail de la publication -->
+                        <a href="{{path('post_read', {'publication_id':publication.id})}}"
+                           class="btn btn-sm btn-default">
+                            Lire la suite
+                        </a>
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

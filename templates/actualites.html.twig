@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <!-- Liste des publications -->
+    <div class="jumbotron">
+        {% for publication in actus %}
+
+            <h2> {{ publication.title }} </h2>
+            <div>
+                <p>
+                    {{ publication.content|u.truncate(100, '...', false)|striptags }} <br><br>
+                </p>
+                <p>
+                    <!-- Lien vers la page détail publication -->
+                    <a href="{{path("post_read",  {"publication_id": publication.id}) }}"
+                       class="btn btn-sm btn-default">
+                        Voir la suite
+                    </a>
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

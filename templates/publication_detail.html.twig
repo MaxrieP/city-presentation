@@ -1,0 +1,36 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="jumbotron">
+    <div class="container">
+
+        <div class="publication-thumb">
+            <h1 style="font-size: 48px">{{publication.title}}</h1>
+            <div>
+                <p>
+                    Publié par <strong>{{publication.author}}</strong>,
+                    le <em>{{publication.published_at|date("d/m/Y")}}</em>.
+                </p>
+                <p>
+                    {{publication.description}}
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div>
+        {{publication.content|raw}}
+    </div>
+</div>
+
+<div class="col-md-3">
+            {% block side %}
+                {{ render(controller('App\\Controller\\SidebarController::draw')) }}
+            {% endblock %}
+</div>
+{% endblock %}

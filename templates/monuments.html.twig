@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1> Monuments de Brighton </h1>
+
+    {% for monument in monuments_list %}
+        <h2>{{ monument.name }}</h2>
+        <img src="{{monument.image}}" class="img-fluid">
+        {{ monument.description|u.truncate(100, '...', false)|striptags }} <br><br>
+    {% endfor %}
+{% endblock %}
